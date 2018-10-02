@@ -1,0 +1,23 @@
+{
+  "name": "puppeteer-bookmarks",
+  "version": "1.0.0",
+  "description": "puppeteer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liqiUser/puppeteer-bookmarks.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/liqiUser/puppeteer-bookmarks/issues"
+  },
+  "homepage": "https://github.com/liqiUser/puppeteer-bookmarks#readme",
+  "dependencies": {
+    "puppeteer": "^1.8.0",
+    "puppeteer-core": "^1.8.0"
+  }
+}
