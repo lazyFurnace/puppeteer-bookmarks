@@ -5,8 +5,10 @@
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
 <TITLE>Bookmarks</TITLE>
 <H1>Bookmarks</H1>
+<% let date = new Date().getTime().toString() _%>
+<% date = date.substring(0, date.length - 3) _%>
 <DL><p>
-    <DT><H3 ADD_DATE="1488165783" LAST_MODIFIED="1494984417" PERSONAL_TOOLBAR_FOLDER="true">书签栏</H3>
+    <DT><H3 ADD_DATE="<%= date _%>" LAST_MODIFIED="<%= date _%>" PERSONAL_TOOLBAR_FOLDER="true">书签栏</H3>
     <DL><p>
     <% for (let i = 0; i < json.length; i++) { _%>
         <DT><A HREF="<%= json[i].href %>" ADD_DATE="<%= json[i].add_date %>" ICON="<%= json[i].icon %>"><%= json[i].text %></A>
