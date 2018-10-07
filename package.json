@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/liqiUser/puppeteer-bookmarks#readme",
   "dependencies": {
+    "express": "^4.16.3",
     "puppeteer": "^1.8.0",
     "puppeteer-core": "^1.8.0"
   }
