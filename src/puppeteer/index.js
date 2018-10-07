@@ -1,4 +1,5 @@
 const puppeteer = require('puppeteer');
+const ejs = require('ejs');
 const fs = require('fs');
 
 (async () => {
@@ -58,7 +59,21 @@ const fs = require('fs');
         if (err) {
             console.log(err);
         } else {
-            console.log('文件创建成功');
+            console.log('文件 json 创建成功');
+        }
+    });
+
+    ejs.renderFile(__dirname + '/bookmark.ejs', { json: jsonData }, (err, data) => {
+        if (err) {
+            console.log(err);
+        } else {
+            fs.writeFile(__dirname + '/bookmark.html', data, err => {
+                if (err) {
+                    console.log(err);
+                } else {
+                    console.log('文件 html 创建成功');
+                }
+            })
         }
     });
 
