@@ -2,10 +2,12 @@ const http = require('http');
 const fs = require('fs');
 const express = require('express');
 
+// 书签页的 url
 const bookmarks = __dirname + '/bookmarks';
 
 let bookmarksList;
 
+// 读取书签页文件下的所有书签文件
 fs.readdir(bookmarks, (err, files) => {
     if (err) {
         console.error(err);
@@ -16,8 +18,10 @@ fs.readdir(bookmarks, (err, files) => {
 
 const app = express();
 
+// 书签静态服务器
 app.use('/bookmarks', express.static(bookmarks));
 
+// 首页的数据
 app.get('/', (req, res) => {
     const indexResult = `
         <ul>
