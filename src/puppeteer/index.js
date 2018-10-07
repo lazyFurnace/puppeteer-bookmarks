@@ -15,15 +15,18 @@ const fs = require('fs');
         headless: false
     }));
 
+    // 打开一个空白页
     const page = await browser.newPage();
 
+    // 跳转至 localhost
     await page.goto('http://localhost');
 
+    // 获取所有书签页面
     const bookmark = await page.$$eval('a', node => node.map(item => item.href));
 
     let jsonData = [];
-    const filterArray = [];
 
+    // 遍历所有书签页, 生成一个包含所有书签项的数组
     for (let i = 0; i < bookmark.length; i++) {
         const item = bookmark[i];
         await page.goto(item);
@@ -38,6 +41,9 @@ const fs = require('fs');
         jsonData.push(...bookmarkData);
     }
 
+    const filterArray = [];
+
+    // 过滤重复的书签
     jsonData = jsonData.filter(item => {
         if (filterArray.indexOf(item.href) === -1) {
             filterArray.push(item.href);
@@ -47,6 +53,7 @@ const fs = require('fs');
         }
     })
 
+    // 生成一个 json 文件
     fs.writeFile(__dirname + '/bookmark.json', JSON.stringify(jsonData, null, 4), err => {
         if (err) {
             console.log(err);
