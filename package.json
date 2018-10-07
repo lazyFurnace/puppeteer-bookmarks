@@ -4,7 +4,8 @@
   "description": "puppeteer",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start-express": "node src/express/app.js",
+    "start-puppeteer": "node src/puppeteer/index.js"
   },
   "repository": {
     "type": "git",
