@@ -13,7 +13,7 @@ const fs = require('fs');
         // 打开开发者工具, 当此值为true时, headless总为false
         devtools: false,
         // 关闭headless模式, 不会打开浏览器
-        headless: false
+        headless: true
     }));
 
     // 打开一个空白页
@@ -59,7 +59,7 @@ const fs = require('fs');
         if (err) {
             console.log(err);
         } else {
-            console.log('文件 json 创建成功');
+            console.log('文件书签 json 创建成功!');
         }
     });
 
@@ -71,10 +71,13 @@ const fs = require('fs');
                 if (err) {
                     console.log(err);
                 } else {
-                    console.log('文件 html 创建成功');
+                    console.log('文件书签 html 创建成功!');
                 }
             })
         }
     });
+
+    console.log('合并书签 html 生成成功!')
+    await browser.close();
 
 })();
