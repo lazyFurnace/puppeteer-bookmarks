@@ -1,7 +1,5 @@
 # puppeteer-bookmarks
 
-********
-
 ### 介绍 <br>
 
 `puppeteer-bookmarks` 是一个能将多个 `chrome` 书签页整合成一个书签页的工具 <br>
@@ -14,6 +12,4 @@
 `npm run start-express` 启动服务器 <br>
 `npm run start-puppeteer` 开始抓取数据
 
-********
-
-生成的 html 书签页可直接导入 `chrome`
+##### 生成的 html 书签页可直接导入 `chrome`
